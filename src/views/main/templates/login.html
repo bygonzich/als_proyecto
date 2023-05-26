@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PlaningGym</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/login.css">
+    <script type="text/javascript" src="static/codigo.js"></script>
+</head>
+<body>
+    <header>
+        <h1>PlaningGym</h1>
+    </header>
+
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <label for="usuarioLogin">Usuario</label>
+            <input type="text" id="usuarioLogin" name="usuarioLogin"/>
+            <br>
+            <label for="contraLogin">Contraseña</label>
+            <input type="password" id="contraLogin" name="contraLogin"/>
+            <br>
+            <input type="submit" id="submitLogin" class="btn btn-success" value="Enviar">
+        </form>
+        <input type="button" id="toRegister" class="btn btn-secondary" value="Registro" onclick="openRegister();">
+    </div>
+
+    <div id="registerForm">
+        <h2>Registro</h2>
+        <form action="/register" method="POST">
+            <label for="usuarioRegister">Usuario</label>
+            <input type="text" id="usuarioRegister" name="usuarioRegister"/>
+            <br>
+            <label for="contraRegister">Contraseña</label>
+            <input type="password" id="contraRegister" name="contraRegister"/>
+            <br>
+            <input type="submit" id="submitRegister" class="btn btn-success" value="Enviar">
+        </form>
+        <input type="button" id="toLogin" class="btn btn-secondary" value="Login" onclick="openLogin();">
+    </div>
+
+    <div id="dd-errores">
+        <ul>
+        {% for msg in get_flashed_messages() %}
+            <li>{{ msg }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

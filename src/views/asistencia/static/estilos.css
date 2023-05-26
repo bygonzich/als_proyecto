@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    text-align: center;
+    /*display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas:
+    "header header header"
+    ". mainContent .";*/
+}
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+#mainArea {
+    grid-area: mainContent;
+}

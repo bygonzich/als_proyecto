@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rutinas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>PlaningGym</h1>
+    </header>
+
+    <div id="mainDashboard">
+        <h2>Rutinas</h2>
+        {% if rutinas %}
+            <table>
+                <tr>
+                    <th>Monitor</th>
+                    <th>Num. Ejercicios</th>
+                    <th>Músculo</th>
+                </tr>
+            {% for rutina in rutinas %}
+                <tr>
+                    <td>{{ rutina.monitor }}</td>
+                    <td>{{ rutina.numEjer }}</td>
+                    <td>{{ rutina.musculo }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% else %}
+            <h4>No hay rutinas disponibles</h4>
+        {% endif %}
+        <p>
+            <a class="btn btn-info" href="/dashboard" role="button">Volver</a>
+        </p>
+        <br>
+        <h3>Añade una rutina</h3>
+        <form action="/rutina" method="POST">
+            <label for="numEjers">Numero de ejercicios</label>
+            <input type="text" id="numEjers" name="numEjers"/>
+            <br>
+            <label for="musculo">Músculo</label>
+            <input type="text" id="musculo" name="musculo"/>
+            <br>
+            <input type="submit" id="submitRutina" class="btn btn-primary" value="Añade rutina">
+        </form>
+    </div>
+</body>
+</html>

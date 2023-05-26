@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas:
+    "header header header"
+    ". mainContent ."
+    ". errors . ";
+}
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+#loginForm {
+    grid-area: mainContent;
+    /*display: grid;
+    grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
+    grid-template-areas:
+    "login login login login login"
+    ". user user user ."
+    ". contra contra contra ."
+    ". . button . ."
+    ". . button . .";*/
+
+}
+
+#registerForm {
+    display: none;
+    grid-area: mainContent;
+}
+
+#dd-errores {
+    grid-area: errors;
+    color: white;
+    background-color: red;
+}
